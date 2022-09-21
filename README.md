@@ -3,6 +3,7 @@
 `comandos rapidos`<br/>
 * crear componente con CLI <br/>
 ng g c components/nav-bar --spec=false -is
+<hr/>
 ng => angular<br/>
 g => generate<br/>
 c => component<br/>
