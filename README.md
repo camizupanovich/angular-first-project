@@ -1,27 +1,74 @@
-# FirstProject
+# Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+`comandos rapidos`<br/>
+* crear componente con CLI 
+ng g c components/nav-bar --spec=false -is
+ng => angular<br/>
+g => generate<br/>
+c => component<br/>
+--spec=false => para que no cree el archivo de testing <br/>
+-is => para que no cree el css<br/>
 
-## Development server
+## ¿Qué es input y output en Angular?
+Los decoradores @Input y @Output sirven para intercambiar datos entre componentes, son un mecanismo para enviar y recibir datos de un componente a otro. @Input se usa para recibir datos en un componente mientras que @Output se usa para enviar datos fuera de un componente.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Rutas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Como se incluyen en la app
+en `app.module.ts` se importan componentes y se crean las rutas
+@NgModule({<br/>
+  imports: [<br/>
+    BrowserModule,<br/>
+    ReactiveFormsModule,<br/>
+    RouterModule.forRoot([<br/>
+      { path: '', component: ProductListComponent },<br/>
+      { path: 'products/:productId', component: ProductDetailsComponent },<br/>
+    ])<br/>
+  ],<br/>
+  declarations: [<br/>
+    AppComponent,<br/>
+    TopBarComponent,<br/>
+    ProductListComponent,<br/>
+    ProductAlertsComponent,<br/>
+    ProductDetailsComponent,<br/>
+  ],
 
-## Build
+## Organización de componentes
+body.component.html<br/>
+body.component.ts<br/>
+body.components.css (en caso de estilos personalizados)<br/>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Como se pasa codigo js al html?
+* para pasar props a html <> {{ elemento.nombre }} </> <br/>
+* cuando le pasamos props a atributos ej <img [src]="elemento.image" /> no olvidarse porque no tomará el codigo javascript<br/>
+* para pasar event listeners (click)="share()" <br/>
 
-## Running unit tests
+`EJEMPLO DE CODIGO`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+import { Component } from "@angular/core"
 
-## Running end-to-end tests
+@component ({<br/>
+  selector: "body-component",<br/>
+  templateUrl: "/body.component.html",<br/>
+  styleUrl: "/body.component.css"<br/>
+})<br/>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+export class BodyComponent{......}
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Enlaces de referencia
+
+* comandos para angular https://codigoencasa.com/los-comandos-de-angular-mas-usados/
+* directivas https://javadesde0.com/introduccion-a-las-directivas-y-tipos-de-directivas-en-angular/#:~:text=%C2%BFQu%C3%A9%20son%20las%20directivas%20de,funcionalidad%20a%20las%20etiquetas%20HTML.
+
+
+### Conceptos de las directivas
+
+`ngIf como HOOKS para renderizados condicionales, modales, dark mode etc etc`
+
+* `*ngIf o [ngIf]`: permite evaluar de forma condicional una condición y dependiendo del resultado normalmente se suele utilizar con la finalidad de mostrar u ocultar una información.
+* `*ngFor o [ngFor]`: permite iterar una array, objeto, etc. normalmente con el fin de insertar cada uno de los elementos contenidos en su interior.
+* *ngSwith o [*ngSwith] + *ngSwitchCase o [ngSwitchCase]: permite evaluar una expresión mediante a una sucesión de condiciones principalmente se utiliza cunado existen casuísticas múltiples y solo queremos ejecutar una en especifico o todas a partir de dicha condición.
+* [ngStyle]: nos permitirán cambiar las propiedades del elemento HTML seleccionado.
+* [ngClass]: nos permitirán agregar clases dinámicamente sobre el elemento HTML seleccionado
