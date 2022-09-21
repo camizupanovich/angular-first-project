@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+//routes
+import { APP_ROUTING } from './app.routes';
+//components
 import { AppComponent } from './app.component';
-import { BodyComponent } from './components/body/body.component';
+import { NgFor } from './components/ngfor/ngfor.component';
 import { Hero } from './components/hero/hero.component';
 import { NavBar } from './components/nav-bar/nav-bar.component';
 
@@ -11,10 +13,12 @@ import { NavBar } from './components/nav-bar/nav-bar.component';
     AppComponent,
     NavBar,
     Hero,
-    BodyComponent
+    NgFor
+    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    APP_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
