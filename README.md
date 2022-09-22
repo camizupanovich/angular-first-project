@@ -89,3 +89,6 @@ Los decoradores @Input y @Output sirven para intercambiar datos entre componente
 * *ngSwith o [*ngSwith] + *ngSwitchCase o [ngSwitchCase]: permite evaluar una expresión mediante a una sucesión de condiciones principalmente se utiliza cunado existen casuísticas múltiples y solo queremos ejecutar una en especifico o todas a partir de dicha condición.
 * [ngStyle]: nos permitirán cambiar las propiedades del elemento HTML seleccionado.
 * [ngClass]: nos permitirán agregar clases dinámicamente sobre el elemento HTML seleccionado
+
+## Peticiones HTTP
+para poder trabajar con peticiones es importante importar `HttpClientModule` de `@angular/common/http` en el archivo **App.module.ts** 
