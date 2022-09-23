@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-
+import { Component,OnInit } from "@angular/core";
+import { HomePageData,HomePageDataService } from "src/app/services/homepageData.service";
 @Component({
     selector: 'hero',
     template: `<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -22,10 +22,19 @@ import { Component } from "@angular/core";
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
+  </div>
+  <div class="container mt-4" style=" box-shadow: 0px 0px 10px #21021021; padding:30px; border-radius:20px;" *ngFor="let data of homepagedata">
+    <h2>{{data.title}}</h2>
+    <hr/>
+      <p class="card-text">{{data.description}}</p>
   </div>`
 })
-export class HomeComponent{
-    constructor(){
+export class HomeComponent implements OnInit{
+  homepagedata:HomePageData[]=[];
+    constructor(private _homepagedataservice :HomePageDataService){
         console.log('hero is working successfully')
+    }
+    ngOnInit(){
+      this.homepagedata = this._homepagedataservice.getHomePageData();
     }
 }

@@ -1,12 +1,15 @@
 <div class="container" style="margin-top: 50px;">
 <h1>New Arribals!</h1>
 <p>Functionality made with <b>*NgFor </b> in the file template. It will allow us to create a loop to iterate on an array. Key value is not necessary like React.</p>
-  <div class="col" *ngFor="let product of products">
-    <div class="card" style="max-width: 450px;">
+<div class="row row-cols-1 row-cols-md-3">
+  <div class="col mb-4" *ngFor="let product of products">
+    <div class="card" style="max-width: 400px;">
       <img [src]="product.image" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{product.name}}</h5>
-        <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima hic beatae placeat, fugit numquam corrupti est vel, eum eligendi iure laudantium tenetur vero error! Aspernatur architecto sapiente possimus ipsum accusantium.</p>
+        <p class="card-text">{{product.description}}</p>
+        <a [routerLink]="['/detail',product.id]" class="btn btn-outline-primary w-100">See details...</a>
       </div>
     </div>
+  </div>
 </div>
