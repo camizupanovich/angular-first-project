@@ -1,12 +1,13 @@
 import { RouterModule, Routes } from "@angular/router";
-import { NgFor } from "./components/ngfor/ngfor.component";
-import { Hero } from "./components/hero/hero.component";
-import { NgIf } from "./components/ngif/ngif.component";
+import { ProductsComponent } from "./components/products/products.component";
+import { HomeComponent } from "./components/home/home.component";
+import { AboutComponent } from "./components/about/about.component";
 const APP_ROUTES: Routes = [
-    { path: 'ngfor', component: NgFor},
-    { path: 'ngif', component: NgIf},
-    {path:'static', component: Hero},
-    {path: '**', pathMatch: 'full', redirectTo:'static'}
+    { path: 'products', component: ProductsComponent},
+    { path: 'about', component: AboutComponent},
+    {path:'home', component: HomeComponent},
+    {path: '**', pathMatch: 'full', redirectTo:'home'},
+    {path: '', pathMatch: 'full', redirectTo:'home'},
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES)

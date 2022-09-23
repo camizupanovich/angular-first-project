@@ -7,17 +7,18 @@ import { APP_ROUTING } from './app.routes';
 import { ProductsService } from './services/products.service';
 //components
 import { AppComponent } from './app.component';
-import { NgFor } from './components/ngfor/ngfor.component';
-import { Hero } from './components/hero/hero.component';
 import { NavBar } from './components/nav-bar/nav-bar.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProductsComponent } from './components/products/products.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBar,
-    Hero,
-    NgFor
-    
+    HomeComponent,
+    ProductsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
