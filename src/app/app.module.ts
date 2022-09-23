@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 //routes
 import { APP_ROUTING } from './app.routes';
+//services
+import { ProductsService } from './services/products.service';
 //components
 import { AppComponent } from './app.component';
 import { NgFor } from './components/ngfor/ngfor.component';
@@ -20,7 +23,9 @@ import { NavBar } from './components/nav-bar/nav-bar.component';
     BrowserModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [
+    ProductsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
