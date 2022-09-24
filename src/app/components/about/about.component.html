@@ -1,4 +1,14 @@
-<div>
-    <div>modal</div>
-    <div>imagen</div>
+<div class=" mt-4" style="display:grid; grid-template-columns: 30% 60%; justify-content: space-around;">
+    <div style="display: flex; flex-direction:column; width:100%">
+        <button *ngFor="let product of products" (click)="getImage(product.id)"  class="btn btn-primary m-1">{{product.name}}</button>
+    </div>
+   <!--  <div *ngIf='!this.viewProduct'>
+        <img src='../../../assets/img/one.jpg' style="width: 80%;"/>
+    </div> -->
+    <div *ngIf='this.viewProduct'>
+        <h4 class="alert alert-success" role="alert" *ngIf="this.viewProduct[0].stock">Producto disponible</h4>
+        <h4 class="alert alert-danger" role="alert" *ngIf="!this.viewProduct[0].stock">Producto no disponible</h4>
+        <p style="width: 80%;">{{this.viewProduct[0].description}}</p>
+        <img [src]='this.viewProduct[0].image' style="width: 80%;"/>
+    </div>
 </div>
