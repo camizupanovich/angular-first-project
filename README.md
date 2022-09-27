@@ -78,6 +78,7 @@ Los decoradores @Input y @Output sirven para intercambiar datos entre componente
 
 * comandos para angular https://codigoencasa.com/los-comandos-de-angular-mas-usados/
 * directivas https://javadesde0.com/introduccion-a-las-directivas-y-tipos-de-directivas-en-angular/#:~:text=%C2%BFQu%C3%A9%20son%20las%20directivas%20de,funcionalidad%20a%20las%20etiquetas%20HTML.
+* ciclos de vida de los componentes http://blog.enriqueoriol.com/2018/10/ciclos-de-vida-en-angular-la-guia-definitiva.html
 
 
 ### Conceptos de las directivas
@@ -92,3 +93,6 @@ Los decoradores @Input y @Output sirven para intercambiar datos entre componente
 
 ## Peticiones HTTP
 para poder trabajar con peticiones es importante importar `HttpClientModule` de `@angular/common/http` en el archivo **App.module.ts** 
+<hr/>
+## Directivas
+* ` <ng-container></ng-container> ` selector que sirve para contener las directivas, 
